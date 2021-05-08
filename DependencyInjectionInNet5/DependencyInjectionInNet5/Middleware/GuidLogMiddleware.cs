@@ -14,8 +14,12 @@ namespace DependencyInjectionInNet5.Middleware
     {
         private readonly RequestDelegate _next;
         private readonly ILogger _logger;
+        private readonly IGuidService _guidService;
 
-        public GuidLogMiddleware(RequestDelegate next, ILogger<GuidLogMiddleware> logger)
+        public GuidLogMiddleware(
+            RequestDelegate next, 
+            ILogger<GuidLogMiddleware> logger
+            )
         {
             _next = next;
             _logger = logger;

@@ -9,5 +9,6 @@ namespace DependencyInjectionInNet5.Configuration
     {
         public string From { get; set; }
         public string To { get; set; }
+        public bool Avaiable { get; set; }
     }
 }

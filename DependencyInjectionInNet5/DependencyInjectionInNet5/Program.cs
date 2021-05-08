@@ -21,13 +21,14 @@ namespace DependencyInjectionInNet5
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
                     webBuilder.UseStartup<Startup>();
-                })
-                .UseDefaultServiceProvider((env, c) =>
-                {
-                    if (env.HostingEnvironment.IsDevelopment())
-                    {
-                        //c.ValidateScopes = true;
-                    }
                 });
+
+                //.UseDefaultServiceProvider((env, c) =>
+                //{
+                //    if (env.HostingEnvironment.IsDevelopment())
+                //    {
+                //        c.ValidateScopes = true;
+                //    }
+                //});
     }
 }

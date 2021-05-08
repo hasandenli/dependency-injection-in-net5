@@ -26,13 +26,16 @@ namespace DependencyInjectionInNet5
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddSingleton<IGuidService, GuidService>();
+            services.AddTransient<IGuidService, GuidService>();
             services.AddScoped<ScopedDependency>();
+            services.AddTransient<TransientDependency>();
+            services.AddSingleton<SingletonDependeny>();
 
             services.AddScoped<IMailSenderService, MailSenderService>();
-            services.AddScoped<IMailSenderService, XMailSenderService>();
+            //services.AddScoped<IMailSenderService, XMailSenderService>();
 
-            services.RemoveAll<IMailSenderService>();
+            //services.Replace(ServiceDescriptor.Scoped<IMailSenderService, XMailSenderService>());
+            //services.RemoveAll<IMailSenderService>();
 
             services.Configure<MailSettingsConfiguration>(Configuration.GetSection("MailSettings"));
 
