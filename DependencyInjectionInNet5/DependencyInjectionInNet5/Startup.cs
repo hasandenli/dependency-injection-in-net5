@@ -32,7 +32,7 @@ namespace DependencyInjectionInNet5
             services.AddSingleton<SingletonDependeny>();
 
             services.AddScoped<IMailSenderService, MailSenderService>();
-            //services.AddScoped<IMailSenderService, XMailSenderService>();
+            services.AddScoped<IMailSenderService, XMailSenderService>();
 
             //services.Replace(ServiceDescriptor.Scoped<IMailSenderService, XMailSenderService>());
             //services.RemoveAll<IMailSenderService>();
